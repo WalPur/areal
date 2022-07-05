@@ -4,6 +4,8 @@ import Catalog from './catalog/catalog';
 import News from './news/news';
 import Showboat from './showboat/Showboat';
 import Footer from './footer/Footer';
+import Services from './services';
+import SliderServices from './slider';
 
 const Components = {
     General,
@@ -11,7 +13,9 @@ const Components = {
     Catalog,
     News,
     Showboat,
-    Footer
+    Footer,
+    SliderServices,
+    Services,
 }
 
 export default Components;
