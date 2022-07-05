@@ -5,11 +5,12 @@ import Images from '../../images';
 
 function News() {
     const TypograhyText = styled(Typography)(({ theme }) => ({
-        fontWeight: 400,
+        fontWeight: 500,
         fontSize: 24,
         lineHeight: "140%",
         color: "#00000",
         alignText: "center",
+        marginBottom: "11px",
         [theme.breakpoints.down('md')]: {
             fontSize: 16,
             width: 500,
@@ -20,8 +21,9 @@ function News() {
         }
     }));
     const TypographySubtitle = styled(Typography)(({ theme }) => ({
-        fontSize: 16,
-        lineHeight: "130%",
+        fontSize: 12,
+        lineHeight: "140%",
+        fontweight: 400,
         color: "#000000",
         [theme.breakpoints.down('md')]: {
             fontSize: 12,
@@ -53,7 +55,7 @@ function News() {
     return(
         <Box 
             sx={{
-                paddingTop: "100px"
+                padding: "100px 0"
             }}
         >
             <Container 
@@ -80,24 +82,32 @@ function News() {
                     }}
                 >
                     <ItemBox 
-                        sx={{width: "220px",}}
+                        sx={{width: "250px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center"}}
                     >
-                        <img src={Images.News_1} alt="" />
+                        <Box sx={{marginBottom: "51px"}}>
+                            <img src={Images.News_1} alt="" />
+                        </Box>
                         <TypograhyText>05.07.2022</TypograhyText>
                         <TypographySubtitle>9-10 июля офис “Сходненское” приглашает на Дни открытых дверей</TypographySubtitle>
                     </ItemBox>
-                    <ItemBox sx={{width: "220px",}}>
-                        <img src={Images.News_2} alt="" />
+                    <ItemBox sx={{width: "250px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center"}}>
+                        <Box sx={{marginBottom: "51px"}}>
+                            <img src={Images.News_2} alt="" />
+                        </Box>
                         <TypograhyText>05.07.2022</TypograhyText>
                         <TypographySubtitle>Успей купить готовый коттедж в жилом КП</TypographySubtitle>
                     </ItemBox>
-                    <ItemBox sx={{width: "220px",}}>
-                        <img src={Images.News_3} alt="" />
+                    <ItemBox sx={{width: "250px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center"}}>
+                        <Box sx={{marginBottom: "51px"}}>
+                            <img src={Images.News_3} alt="" />
+                        </Box>
                         <TypograhyText>04.07.2022</TypograhyText>
                         <TypographySubtitle>9 июля в офисе “Сокол” состоится День открытых дверей</TypographySubtitle>
                     </ItemBox>
-                    <ItemBox sx={{width: "220px",}}>
-                        <img src={Images.News_4} alt="" />
+                    <ItemBox sx={{marginTop: "12px" ,width: "250px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center"}}>
+                        <Box sx={{marginBottom: "51px"}}>
+                            <img src={Images.News_4} alt="" />
+                        </Box>
                         <TypograhyText>01.07.2022</TypograhyText>
                         <TypographySubtitle>Газета “Недвижимость нашего района” офиса “Зеленый проспект”: 70-й выпуск!</TypographySubtitle>
                     </ItemBox>

@@ -16,10 +16,12 @@ import Catalog_1 from './catalog_1.png';
 import Catalog_2 from './catalog_2.png';
 import Catalog_3 from './catalog_3.png';
 import Catalog_4 from './catalog_4.png';
-import News_1 from './news_1.png'
-import News_2 from './news_2.png'
-import News_3 from './news_3.png'
-import News_4 from './news_4.png'
+import News_1 from './news_1.png';
+import News_2 from './news_2.png';
+import News_3 from './news_3.png';
+import News_4 from './news_4.png';
+import footer from './footer.png';
+import footer2 from './footer2.png';
 
 const Images = {
     general_bg,
@@ -44,6 +46,8 @@ const Images = {
     News_2,
     News_3,
     News_4,
+    footer,
+    footer2
 }
 
 export default Images;

@@ -53,7 +53,7 @@ function Catalog() {
         <Box 
             sx={{
                 backgroundColor: "white",
-                paddingTop: "100px"
+                padding: "100px 0"
             }}
         >
             <Container 
@@ -80,25 +80,105 @@ function Catalog() {
                     }}
                 >
                     <ItemBox 
-                        sx={{width: "220px",}}
+                        sx={{
+                            width: "220px",
+                            display: "flex",
+                            justifyContent: "center",
+                            flexDirection: "column",
+                            textAlign: "center"
+                        }}
                     >
-                        <img src={Images.Catalog_1} alt="" />
-                        <TypograhyText>6 400 000 руб.</TypograhyText>
+                        <Box  
+                            sx={{
+                                marginBottom: "21px"
+                            }}
+                            >
+                                <img src={Images.Catalog_1} alt="" />
+                            </Box>
+                        
+                        <TypograhyText
+                            sx={{
+                                marginBottom: "14px"
+                            }}
+                        >
+                            6 400 000 руб.
+                        </TypograhyText>
                         <TypographySubtitle>1 комн., 36 м2, инд. планировка, 203 мкрн.</TypographySubtitle>
                     </ItemBox>
-                    <ItemBox sx={{width: "220px",}}>
-                        <img src={Images.Catalog_2} alt="" />
-                        <TypograhyText>16 500 000 руб.</TypograhyText>
+                    <ItemBox 
+                        sx={{
+                            width: "220px",
+                            display: "flex",
+                            justifyContent: "center",
+                            flexDirection: "column",
+                            textAlign: "center"
+                        }}>
+                            <Box  
+                            sx={{
+                                marginBottom: "21px"
+                            }}
+                            >
+                                <img src={Images.Catalog_2} alt="" />
+                            </Box>
+                        <TypograhyText 
+                            sx={{
+                                marginBottom: "14px",
+                            }}
+                        >
+                            16 500 000 руб.
+                        </TypograhyText>
                         <TypographySubtitle>Частный каменный дом с площадью 180 м2</TypographySubtitle>
                     </ItemBox>
-                    <ItemBox sx={{width: "220px",}}>
-                        <img src={Images.Catalog_3} alt="" />
-                        <TypograhyText>6 850 000 руб.</TypograhyText>
-                        <TypographySubtitle>2 комн., 112 серия, Центр. район, пл. Орджоникидзе</TypographySubtitle>
+                    <ItemBox 
+                        sx={{
+                            width: "220px",
+                            display: "flex",
+                            flexDirection: "column",
+                            textAlign: "center",
+                        }}>
+                            <Box  
+                            sx={{
+                                marginBottom: "21px",
+                            }}
+                            >
+                                <img src={Images.Catalog_3} alt="" />
+                            </Box>
+                        <TypograhyText 
+                            sx={{
+                                marginBottom: "14px",
+                                width: '221px',
+                            }}
+                        >
+                            6 850 000 руб.
+                        </TypograhyText>
+                        <TypographySubtitle sx={{
+                                width: '221px',
+                            }}>
+                                2 комн., 112 серия, Центр. район, пл. Орджоникидзе
+                            </TypographySubtitle>
                     </ItemBox>
-                    <ItemBox sx={{width: "220px",}}>
-                        <img src={Images.Catalog_4} alt="" />
-                        <TypograhyText>2 500 руб.</TypograhyText>
+                    <ItemBox 
+                        sx={{
+                            width: "220px",
+                            display: "flex",
+                            justifyContent: "center",
+                            flexDirection: "column",
+                            textAlign: "center"
+                        }}>
+                            <Box  
+                            sx={{
+                                marginBottom: "21px"
+                            }}
+                            >
+                                <img src={Images.Catalog_4} alt="" />
+                            </Box>
+                        <TypograhyText 
+                            sx={{
+                                marginBottom: "14px"
+                            }}
+                        >
+                            2 500 руб.
+                        </TypograhyText>
                         <TypographySubtitle>Сдается посуточно 1 комн. квартира</TypographySubtitle>
                     </ItemBox>
                 </Box>

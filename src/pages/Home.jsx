@@ -10,6 +10,7 @@ function Home() {
             <Components.Catalog/>
             <Components.News/>
             <Components.Showboat/>
+            <Components.Footer/>
         </div>
     )
 }
