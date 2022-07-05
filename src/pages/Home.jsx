@@ -8,6 +8,7 @@ function Home() {
             <Components.General/>
             <Components.Information/>
             <Components.Catalog/>
+            <Components.Showboat/>
         </div>
     )
 }

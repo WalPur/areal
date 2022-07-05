@@ -4,7 +4,7 @@ import { Box, Container, Typography, } from '@mui/material';
 
 
 import Images from '../../images';
-import { width } from '@mui/system';
+import {  } from '@mui/system';
 
 function Information() {
     return(
