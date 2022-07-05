@@ -8,11 +8,11 @@ import Images from '../../images';
 
 function General() {
     const CustomButton = styled(Box)(({ theme }) => ({
+        textAlign: "center",
         marginBottom: 51,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        textDecoration: "none",
         backgroundColor: "#967848",
         width: 240,
         height: 55,
@@ -20,41 +20,77 @@ function General() {
         fontSize: 18,
         lineHeight: "130%",
         color: "#ffffff",
+        [theme.breakpoints.down('md')]: {
+            width: 160,
+            height: 40,
+            fontSize: 14,
+            marginBottom: 20,
+        },
+        [theme.breakpoints.down('sm')]: {
+            width: 100,
+            height: 30,
+            fontSize: 10,
+        }
+    }));
+    const TypograhyText = styled(Typography)(({ theme }) => ({
+        fontWeight: 400,
+        fontSize: 24,
+        lineHeight: "140%",
+        color: "#fff",
+        [theme.breakpoints.down('md')]: {
+            fontSize: 16,
+            width: 500,
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 12,
+            maxWidth: 260,
+        }
+    }));
+    const TypographyTitle = styled(Typography)(({ theme }) => ({
+        textAlign: "center",
+        marginTop: "20%",
+        marginBottom: 51,
+        fontWeight: 400,
+        fontSize: 36,
+        lineHeight: "130%",
+        color: "#ffffff",
+        [theme.breakpoints.down('md')]: {
+            fontSize: 20,
+            marginTop: "20%",
+            marginBottom: 20,
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 16,
+        }
+    }));
+    const CustomBox = styled(Box)(({ theme }) => ({
+        height: "100vh",
+        width: "100vw",
+        backgroundImage: `url(${Images.general_bg})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        [theme.breakpoints.down('md')]: {
+            height: "70vh",
+        },
+        [theme.breakpoints.down('sm')]: {
+            height: "50vh",
+        }
     }));
     return(
-        <Box 
-            sx={{
-                height: "100vh",
-                width: "100vw",
-                backgroundImage: `url(${Images.general_bg})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-            }}
-        >
-            <Container 
-                maxWidth="lg"
-                sx={{
-
-                }}
-            >
+        <CustomBox>
+            <Container maxWidth="lg">
                 <Box
                     sx={{
                         pt: 4,
-                        width: "60%",
+                        width: "100%",
                         display: "flex",
                         justifyContent: "space-between",
                         alignItems: "center",
                     }}
                 >
                     <img src={Images.logo}/>
-                    <Typography
-                        sx={{
-                            fontWeight: 400,
-                            fontSize: 24,
-                            lineHeight: "160%",
-                            color: "#ffffff",
-                        }}
-                    >+7(914)-273-13-18</Typography>
+                    <TypograhyText sx={{ textAlign: "end" }}>+7(914)-273-13-18</TypograhyText>
                 </Box>
                 <Box
                     sx={{
@@ -63,38 +99,25 @@ function General() {
                         alignItems: "center",
                     }}
                 >
-                    <Typography
-                        sx={{
-                            mt: "20%",
-                            mb: 5.1,
-                            fontWeight: 400,
-                            fontSize: 36,
-                            lineHeight: "130%",
-                            color: "#ffffff",
-                        }}
-                    >
+                    <TypographyTitle>
                         РИЭЛТОРСКАЯ КОМПАНИЯ ООО “АРЕАЛ”
-                    </Typography>
+                    </TypographyTitle>
                     <HashLink to="">
                         <CustomButton>
                             Выбрать апартаменты
                         </CustomButton>
                     </HashLink>
-                    <Typography
+                    <TypograhyText
                         sx={{
                             textAlign: "center",
                             width: 617,
-                            fontWeight: 400,
-                            fontSize: 24,
-                            lineHeight: "140%",
-                            color: "#fff"
                         }}
                     >
                         Срочная продажа квартир и комнат на ваших условиях, сбор документов по ускоренной схеме
-                    </Typography>
+                    </TypograhyText>
                 </Box>
             </Container>
-        </Box>
+        </CustomBox>
     )
 }
 
