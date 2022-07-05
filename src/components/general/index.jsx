@@ -102,7 +102,7 @@ function General() {
                     <TypographyTitle>
                         РИЭЛТОРСКАЯ КОМПАНИЯ ООО “АРЕАЛ”
                     </TypographyTitle>
-                    <HashLink to="">
+                    <HashLink to="#catalog">
                         <CustomButton>
                             Выбрать апартаменты
                         </CustomButton>

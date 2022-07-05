@@ -55,6 +55,7 @@ function Catalog() {
                 backgroundColor: "white",
                 padding: "100px 0"
             }}
+            id="catalog"
         >
             <Container 
                 maxWidth="lg"

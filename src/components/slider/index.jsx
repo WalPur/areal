@@ -54,6 +54,14 @@ const SliderServices = () => {
         slidesToShow: 3,
         variableWidth: false,
         swipeToSlide: true,
+        responsive: [
+            {
+                breakpoint: 1100,
+                settings: {
+                    slidesToShow: 2,
+                }
+            }
+        ]
     };
     return (
       <div>
@@ -62,13 +70,14 @@ const SliderServices = () => {
             {data.map((item, index) => (
                 <Box key={index}
                     sx={{
-                        maxWidth: 360,
                         mb: 3,
+                        margin: "0 auto",
+                        width: "100%",
                     }}
                 >
-                    <img src={item.img} style={{ marginBottom: 43 }}/>
-                    <MyTextSubtitle sx={{ mb: 1.4 }}>{item.title}</MyTextSubtitle>
-                    <MyText>{item.text}</MyText>
+                    <img src={item.img} style={{ marginBottom: 43, width: "95%" }}/>
+                    <MyTextSubtitle sx={{ mb: 1.4, width: "95%" }}>{item.title}</MyTextSubtitle>
+                    <MyText sx={{ width: "95%" }}>{item.text}</MyText>
                 </Box>
             ))}
         </Slider>
