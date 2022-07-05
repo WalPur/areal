@@ -12,6 +12,10 @@ import Services_3 from './services_3.png';
 import Services_4 from './services_4.png';
 import Services_5 from './services_5.png';
 import Services_6 from './services_6.png';
+import Catalog_1 from './catalog_1.png';
+import Catalog_2 from './catalog_2.png';
+import Catalog_3 from './catalog_3.png';
+import Catalog_4 from './catalog_4.png';
 
 const Images = {
     general_bg,
@@ -28,6 +32,10 @@ const Images = {
     Services_4,
     Services_5,
     Services_6,
+    Catalog_1,
+    Catalog_2,
+    Catalog_3,
+    Catalog_4,
 }
 
 export default Images;
