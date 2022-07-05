@@ -15,7 +15,8 @@ function Information() {
             <Container 
                 maxWidth="lg"
                 sx={{
-
+                    display: "flex",
+                    flexDirection: "row"
                 }}
             >
                 <Box>
@@ -62,8 +63,6 @@ function Information() {
                             <img src={Images.Information_i1} alt="Information_i1" />
                             <Typography 
                             sx={{
-                                mt: "20%",
-                                mb: 5.1,
                                 fontWeight: 500,
                                 fontSize: 16,
                                 lineHeight: "20px",
@@ -78,8 +77,6 @@ function Information() {
                             <img src={Images.Information_i2} alt="Information_i2" />
                             <Typography 
                             sx={{
-                                mt: "20%",
-                                mb: 5.1,
                                 fontWeight: 500,
                                 fontSize: 16,
                                 lineHeight: "20px",
@@ -93,8 +90,6 @@ function Information() {
                             <img src={Images.Information_i3} alt="Information_i3" />
                             <Typography 
                             sx={{
-                                mt: "20%",
-                                mb: 5.1,
                                 fontWeight: 500,
                                 fontSize: 16,
                                 lineHeight: "20px",
@@ -108,8 +103,6 @@ function Information() {
                             <img src={Images.Information_i4} alt="Information_i4" />
                             <Typography 
                             sx={{
-                                mt: "20%",
-                                mb: 5.1,
                                 fontWeight: 500,
                                 fontSize: 16,
                                 lineHeight: "20px",
@@ -123,8 +116,6 @@ function Information() {
                             <img src={Images.Information_i5} alt="Information_i5" />
                             <Typography 
                             sx={{
-                                mt: "20%",
-                                mb: 5.1,
                                 fontWeight: 500,
                                 fontSize: 16,
                                 lineHeight: "20px",
@@ -135,6 +126,9 @@ function Information() {
                             </Typography>
                         </Box>
                     </Box>
+                </Box>
+                <Box>
+                    <img src={Images.information} alt="information" />
                 </Box>
             </Container>
         </Box>
