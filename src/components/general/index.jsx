@@ -65,7 +65,7 @@ function General() {
     }));
     const CustomBox = styled(Box)(({ theme }) => ({
         height: "100vh",
-        width: "100vw",
+        width: "100%",
         backgroundImage: `url(${Images.general_bg})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
