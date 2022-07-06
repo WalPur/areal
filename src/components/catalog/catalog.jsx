@@ -77,10 +77,6 @@ function Catalog() {
     ]
     return(
         <CustomBox 
-            sx={{
-                backgroundColor: "white",
-                padding: "100px 0"
-            }}
             id="catalog"
         >
             <Container 

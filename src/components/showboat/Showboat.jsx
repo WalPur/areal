@@ -1,21 +1,41 @@
 import React from 'react';
 
 import { Box, Container, Typography, } from '@mui/material';
+import { styled } from '@mui/system';
 
-import { MyText, MyTextTitle, MyTextSubtitle } from '../text';
+import { MyText, MyTextTitle } from '../text';
 
 
 import Images from '../../images';
 import {  } from '@mui/system';
 
 function Showboat() {
+    const CustomBox = styled(Box)(({ theme }) => ({
+        backgroundColor: "white",
+        padding: "100px 0 ",
+        [theme.breakpoints.down("md")]:{
+            padding: "20px 0 ",
+        }
+    }));
+    const MyCustomTextTitle = styled(MyTextTitle)(({ theme }) => ({
+        marginBottom: "72px",
+        [theme.breakpoints.down("md")]:{
+            marginBottom: "20px",
+        }
+    }));
+    const MyCustomText = styled(MyText)(({ theme }) => ({
+        fontWeight: 400,
+        lineHeight: "29px",
+        color: "#333333",
+        display: "flex",
+        alignitems: "center",
+        marginBottom: 10,
+        [theme.breakpoints.down("md")]:{
+            marginBottom: 6,
+        }
+    }));
     return(
-        <Box 
-            sx={{
-                backgroundColor: 'white',
-                padding: "110px 0 "
-            }}
-        >
+        <CustomBox>
             <Container 
                 maxWidth="lg"
                 sx={{
@@ -24,40 +44,17 @@ function Showboat() {
                 }}
             >
                 <Box>
-                    <MyTextTitle
-                        sx={{
-                            // width: "659px",
-                            // height: "90px",
-                            fontWeight: 700,
-                            fontSize: 32,
-                            lineHeight: "140%",
-                            color: "#0000000",
-                            marginBottom: "72px",
-                        }}
-                    >
+                    <MyCustomTextTitle>
                         Продажа недвижимости в Якутске и близлежащих населенных пунктах
-                    </MyTextTitle>
+                    </MyCustomTextTitle>
                 </Box>
                 <Box>
-                    <MyText
-                        sx={{
-                            // width: "1179px",
-                            fontWeight: 400,
-                            fontSize: 24,
-                            lineHeight: "29px",
-                            color: "#333333",
-                            margin: "0 0px 25px 0",
-                            display: "flex",
-                            alignitems: "center",
-                        }}
-                    >
+                    <MyCustomText>
                         Покупка и продажа квартир на первичном и вторичном рынках городского и загородного жилья, аренда квартир, а также проводит сделки с коммерческой недвижимостью. Жилая и коммерческая недвижимость Якутска и близлезащих населенных пунктов представлена в нашем каталоге в самом полном объеме, в наличии есть множество вариантов жилья различного типа, предоставляемого как с помощью риэлторов, так и без посредников.
-                    </MyText>
+                    </MyCustomText>
                     <MyText
                         sx={{
-                            // width: "1179px",
                             fontWeight: 400,
-                            fontSize: 24,
                             lineHeight: "29px",
                             color: "#333333",
                             display: "flex",
@@ -69,7 +66,7 @@ function Showboat() {
                 </Box>
                 
             </Container>
-        </Box>
+        </CustomBox>
     )
 }
 
