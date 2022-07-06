@@ -13,11 +13,9 @@ function News() {
         marginBottom: "11px",
         [theme.breakpoints.down('md')]: {
             fontSize: 16,
-            width: 500,
         },
         [theme.breakpoints.down('sm')]: {
             fontSize: 12,
-            maxWidth: 260,
         }
     }));
     const TypographySubtitle = styled(Typography)(({ theme }) => ({
@@ -41,7 +39,6 @@ function News() {
         color: "#000000",
         [theme.breakpoints.down('md')]: {
             fontSize: 20,
-            marginTop: "20%",
             marginBottom: 20,
         },
         [theme.breakpoints.down('sm')]: {
@@ -51,13 +48,43 @@ function News() {
     const ItemBox = styled(Box)(({ theme }) => ({
         width: "220px",
         marginBottom: "30px"
-    }))
+    }));
+    const data = [
+        {
+            img: Images.News_1,
+            date: "05.07.2022",
+            text: "9-10 июля офис “Сходненское” приглашает на Дни открытых дверей",
+        },
+        {
+            img: Images.News_2,
+            date: "05.07.2022",
+            text: "Успей купить готовый коттедж в жилом КП",
+        },
+        {
+            img: Images.News_3,
+            date: "04.07.2022",
+            text: "9 июля в офисе “Сокол” состоится День открытых дверей",
+        },
+        {
+            img: Images.News_4,
+            date: "01.07.2022",
+            text: "Газета “Недвижимость нашего района” офиса “Зеленый проспект”: 70-й выпуск!",
+        },
+    ];
+    const CustomBox = styled(Box)(({ theme }) => ({
+        padding: "100px 0 ",
+        [theme.breakpoints.down("md")]:{
+            padding: "20px 0 ",
+        }
+    }));
+    const ImageBox = styled(Box)(({ theme }) => ({
+        marginBottom: "51px",
+        [theme.breakpoints.down("md")]:{
+            marginBottom: "20px",
+        }
+    }));
     return(
-        <Box 
-            sx={{
-                padding: "100px 0"
-            }}
-        >
+        <CustomBox>
             <Container 
                 maxWidth="lg"
                 sx={{
@@ -76,44 +103,25 @@ function News() {
                     sx={{
                         display: "flex",
                         flexDirection: "row",
-                        justifyContent: "space-between",
+                        justifyContent: "space-evenly",
                         alignItems: "center",
                         flexWrap: "wrap"
                     }}
                 >
-                    <ItemBox 
-                        sx={{width: "250px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center"}}
-                    >
-                        <Box sx={{marginBottom: "51px"}}>
-                            <img src={Images.News_1} alt="" />
-                        </Box>
-                        <TypograhyText>05.07.2022</TypograhyText>
-                        <TypographySubtitle>9-10 июля офис “Сходненское” приглашает на Дни открытых дверей</TypographySubtitle>
-                    </ItemBox>
-                    <ItemBox sx={{width: "250px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center"}}>
-                        <Box sx={{marginBottom: "51px"}}>
-                            <img src={Images.News_2} alt="" />
-                        </Box>
-                        <TypograhyText>05.07.2022</TypograhyText>
-                        <TypographySubtitle>Успей купить готовый коттедж в жилом КП</TypographySubtitle>
-                    </ItemBox>
-                    <ItemBox sx={{width: "250px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center"}}>
-                        <Box sx={{marginBottom: "51px"}}>
-                            <img src={Images.News_3} alt="" />
-                        </Box>
-                        <TypograhyText>04.07.2022</TypograhyText>
-                        <TypographySubtitle>9 июля в офисе “Сокол” состоится День открытых дверей</TypographySubtitle>
-                    </ItemBox>
-                    <ItemBox sx={{marginTop: "12px" ,width: "250px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center"}}>
-                        <Box sx={{marginBottom: "51px"}}>
-                            <img src={Images.News_4} alt="" />
-                        </Box>
-                        <TypograhyText>01.07.2022</TypograhyText>
-                        <TypographySubtitle>Газета “Недвижимость нашего района” офиса “Зеленый проспект”: 70-й выпуск!</TypographySubtitle>
-                    </ItemBox>
+                    {data.map((item, index) => (
+                        <ItemBox 
+                            sx={{ width: "250px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}
+                        >
+                            <ImageBox>
+                                <img src={item.img} alt="" />
+                            </ImageBox>
+                            <TypograhyText>{item.date}</TypograhyText>
+                            <TypographySubtitle>{item.text}</TypographySubtitle>
+                        </ItemBox>
+                    ))}
                 </Box>
             </Container>
-        </Box>
+        </CustomBox>
     )
 }
 
