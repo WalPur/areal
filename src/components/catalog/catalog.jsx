@@ -36,7 +36,6 @@ function Catalog() {
         color: "#000000",
         [theme.breakpoints.down('md')]: {
             fontSize: 20,
-            marginTop: "20%",
             marginBottom: 20,
         },
         [theme.breakpoints.down('sm')]: {
@@ -46,9 +45,38 @@ function Catalog() {
     const ItemBox = styled(Box)(({ theme }) => ({
         width: "220px",
         marginBottom: "30px"
-    }))
+    }));
+    const CustomBox = styled(Box)(({ theme }) => ({
+        backgroundColor: "white",
+        padding: "100px 0 ",
+        [theme.breakpoints.down("md")]:{
+            padding: "20px 0 ",
+        }
+    }));
+    const data = [
+        {
+            img: Images.Catalog_1,
+            price: "6 400 000 руб.",
+            text: "1 комн., 36 м2, инд. планировка, 203 мкрн.",
+        },
+        {
+            img: Images.Catalog_2,
+            price: "16 500 000 руб.",
+            text: "Частный каменный дом с площадью 180 м2",
+        },
+        {
+            img: Images.Catalog_3,
+            price: "6 850 000 руб.",
+            text: "2 комн., 112 серия, Центр. район, пл. Орджоникидзе",
+        },
+        {
+            img: Images.Catalog_4,
+            price: "2 500 руб.",
+            text: "Сдается посуточно 1 комн. квартира ",
+        },
+    ]
     return(
-        <Box 
+        <CustomBox 
             sx={{
                 backgroundColor: "white",
                 padding: "100px 0"
@@ -72,117 +100,42 @@ function Catalog() {
                 <Box
                     sx={{
                         display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: "center",
+                        justifyContent: "space-evenly",
+                        alignItems: "top",
                         flexWrap: "wrap"
                     }}
                 >
-                    <ItemBox 
-                        sx={{
-                            width: "220px",
-                            display: "flex",
-                            justifyContent: "center",
-                            flexDirection: "column",
-                            textAlign: "center"
-                        }}
-                    >
-                        <Box  
+                    {data.map((item, index) => (
+                        <ItemBox 
+                            key={index}
                             sx={{
-                                marginBottom: "21px"
-                            }}
-                            >
-                                <img src={Images.Catalog_1} alt="" />
-                            </Box>
-                        
-                        <TypograhyText
-                            sx={{
-                                marginBottom: "14px"
+                                width: "220px",
+                                display: "flex",
+                                flexDirection: "column",
+                                textAlign: "center",
+                                margin: "0 20px 20px",
                             }}
                         >
-                            6 400 000 руб.
-                        </TypograhyText>
-                        <TypographySubtitle>1 комн., 36 м2, инд. планировка, 203 мкрн.</TypographySubtitle>
-                    </ItemBox>
-                    <ItemBox 
-                        sx={{
-                            width: "220px",
-                            display: "flex",
-                            justifyContent: "center",
-                            flexDirection: "column",
-                            textAlign: "center"
-                        }}>
                             <Box  
-                            sx={{
-                                marginBottom: "21px"
-                            }}
+                                sx={{
+                                    marginBottom: "21px"
+                                }}
                             >
-                                <img src={Images.Catalog_2} alt="" />
+                                <img src={item.img} alt="" />
                             </Box>
-                        <TypograhyText 
-                            sx={{
-                                marginBottom: "14px",
-                            }}
-                        >
-                            16 500 000 руб.
-                        </TypograhyText>
-                        <TypographySubtitle>Частный каменный дом с площадью 180 м2</TypographySubtitle>
-                    </ItemBox>
-                    <ItemBox 
-                        sx={{
-                            width: "220px",
-                            display: "flex",
-                            flexDirection: "column",
-                            textAlign: "center",
-                        }}>
-                            <Box  
-                            sx={{
-                                marginBottom: "21px",
-                            }}
+                            <TypograhyText
+                                sx={{
+                                    marginBottom: "14px"
+                                }}
                             >
-                                <img src={Images.Catalog_3} alt="" />
-                            </Box>
-                        <TypograhyText 
-                            sx={{
-                                marginBottom: "14px",
-                                width: '221px',
-                            }}
-                        >
-                            6 850 000 руб.
-                        </TypograhyText>
-                        <TypographySubtitle sx={{
-                                width: '221px',
-                            }}>
-                                2 комн., 112 серия, Центр. район, пл. Орджоникидзе
-                            </TypographySubtitle>
-                    </ItemBox>
-                    <ItemBox 
-                        sx={{
-                            width: "220px",
-                            display: "flex",
-                            justifyContent: "center",
-                            flexDirection: "column",
-                            textAlign: "center"
-                        }}>
-                            <Box  
-                            sx={{
-                                marginBottom: "21px"
-                            }}
-                            >
-                                <img src={Images.Catalog_4} alt="" />
-                            </Box>
-                        <TypograhyText 
-                            sx={{
-                                marginBottom: "14px"
-                            }}
-                        >
-                            2 500 руб.
-                        </TypograhyText>
-                        <TypographySubtitle>Сдается посуточно 1 комн. квартира</TypographySubtitle>
-                    </ItemBox>
+                                {item.price}
+                            </TypograhyText>
+                            <TypographySubtitle>{item.text}</TypographySubtitle>
+                        </ItemBox>
+                    ))}
                 </Box>
             </Container>
-        </Box>
+        </CustomBox>
     )
 }
 
