@@ -11,11 +11,9 @@ function Catalog() {
         color: "#00000",
         [theme.breakpoints.down('md')]: {
             fontSize: 16,
-            width: 500,
         },
         [theme.breakpoints.down('sm')]: {
             fontSize: 12,
-            maxWidth: 260,
         }
     }));
     const TypographySubtitle = styled(Typography)(({ theme }) => ({

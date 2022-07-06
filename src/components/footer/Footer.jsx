@@ -1,20 +1,76 @@
 import React from 'react';
 
 import { Box, Container, Typography, } from '@mui/material';
-
+import { styled } from "@mui/system";
 
 import Images from '../../images';
 
-import {  } from '@mui/system';
-
 function Footer() {
+    const MyText1 = styled(Typography)(({ theme }) => ({
+        fontWeight: 700,
+        fontSize: 31,
+        lineHeight: "140%",
+        color: "#FFFFFF",
+        margin: "0 10px",
+        [theme.breakpoints.down("lg")]:{
+            fontSize: 22,
+        },
+        [theme.breakpoints.down("md")]:{
+            fontSize: 14,
+        },
+    }));
+    const MyText2 = styled(Typography)(({ theme }) => ({
+        fontWeight: 500,
+        fontSize: 32,
+        color: "#FFFFFF",
+        margin: "0 10px",
+        [theme.breakpoints.down("lg")]:{
+            fontSize: 24,
+        },
+        [theme.breakpoints.down("md")]:{
+            fontSize: 16,
+        }
+    }));
+    const MyText3 = styled(Typography)(({ theme }) => ({
+        fontWeight: 400,
+        fontSize: 26,
+        lineHeight: "160%",
+        color: "#FFFFFF",
+        margin: "0 10px",
+        [theme.breakpoints.down("lg")]:{
+            fontSize: 18,
+        },
+        [theme.breakpoints.down("md")]:{
+            fontSize: 12,
+        }
+    }));
+    const MyText4 = styled(Typography)(({ theme }) => ({
+        width: "112px",
+        fontWeight: 500,
+        fontSize: 10,
+        lineHeight: "160%",
+        color: "#FFFFFF",
+        display: "flex",
+        alignitems: "center",
+    }));
+    const CustomLogo = styled(Box)(({ theme }) => ({
+        width: 74,
+        [theme.breakpoints.down("lg")]:{
+            width: 40,
+        },
+        [theme.breakpoints.down("md")]:{
+            width: 30,
+        }
+    }));
+    const CustomBox = styled(Box)(({ theme }) => ({
+        backgroundColor: "#25211B",
+        padding: "67px 0 7px",
+        [theme.breakpoints.down("md")]:{
+            padding: "30px 0 7px",
+        }
+    }));
     return(
-        <Box 
-            sx={{
-                backgroundColor: "#25211B",
-                padding: "67px 0 0"
-            }}
-        >
+        <CustomBox>
             <Container 
                 maxWidth="lg"
                 sx={{
@@ -32,54 +88,26 @@ function Footer() {
                     <Box
                         sx={{
                             display: "flex",
+                            flexWrap: "wrap",
                             flexDirection: "row",
-                            justifyContent: "start",
+                            justifyContent: "space-around",
                             marginBottom: "30px",
                             textAlign: "center",
                         }}
                     >
-                        <Box>
-                            <img src={Images.footer} alt="footer" />
-                        </Box>
+                        <CustomLogo>
+                            <img src={Images.footer} style={{ width: "100%" }} alt="footer" />
+                        </CustomLogo>
                         
-                        <Typography
-                            sx={{
-                                width: "242px",
-                                height: "45px",
-                                fontWeight: 700,
-                                fontSize: 31,
-                                lineHeight: "140%",
-                                color: "#FFFFFF",
-                                marginLeft: "26px"
-                            }}
-                        >
+                        <MyText1>
                             ООО “АРЕАЛ”
-                        </Typography>
-                        <Typography
-                            sx={{
-                                width: "364px",
-                                height: "45px",
-                                fontWeight: 500,
-                                fontSize: 32,
-                                color: "#FFFFFF",
-                                marginLeft: "41px"
-                            }}
-                        >
+                        </MyText1>
+                        <MyText2>
                             +7(914)-273-13-18
-                        </Typography>
-                        <Typography
-                            sx={{
-                                width: "299px",
-                                height: "42px",
-                                fontWeight: 400,
-                                fontSize: 26,
-                                lineHeight: "160%",
-                                color: "#FFFFFF",
-                                marginLeft: "92px"
-                            }}
-                        >
+                        </MyText2>
+                        <MyText3>
                             areal14reg@gmail.com
-                        </Typography>
+                        </MyText3>
                     </Box>
                     <Box
                         sx={{
@@ -91,24 +119,14 @@ function Footer() {
                         <Box>
                             <img src={Images.footer2} alt="footer2" />
                         </Box>
-                        <Typography
-                            sx={{
-                                width: "112px",
-                                fontWeight: 500,
-                                fontSize: 10,
-                                lineHeight: "160%",
-                                color: "#FFFFFF",
-                                display: "flex",
-                                alignitems: "center",
-                            }}
-                        >
+                        <MyText4>
                             2022, ООО “АРЕАЛ”
-                        </Typography>
+                        </MyText4>
                     </Box>
                 </Box>
             
             </Container>
-        </Box>
+        </CustomBox>
     )
 }
 

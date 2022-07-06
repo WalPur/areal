@@ -1,31 +1,83 @@
 import React from 'react';
 
 import { Box, Container, Typography, } from '@mui/material';
+import { styled } from '@mui/system';
 
+import { MyText, MyTextTitle } from '../text';
 
 import Images from '../../images';
 import {  } from '@mui/system';
 
 function Information() {
+    const data = [
+        {
+            img: Images.Information_i1,
+            text: "Квартиры и комнаты"
+        },
+        {
+            img: Images.Information_i2,
+            text: "Новостройки"
+        },
+        {
+            img: Images.Information_i3,
+            text: "Аренда квартир и комнат"
+        },
+        {
+            img: Images.Information_i4,
+            text: "Коттеджи, участки"
+        },
+        {
+            img: Images.Information_i5,
+            text: "Коммерческая недвижимость"
+        },
+    ];
+    const MyTypography = styled(Typography)(({ theme }) => ({
+        textAlign: "left",        
+        fontWeight: 400,
+        fontSize: 18,
+        lineHeight: "140%",
+        color: "#333333",
+        maxWidth: 721,
+        margin: "0 0 100px 0",
+        [theme.breakpoints.down("md")]: {
+            fontSize: 14,
+            margin: "0 0 30px 0",
+        },
+        [theme.breakpoints.down("sm")]: {
+            fontSize: 10,
+        }
+    }));
+    const CustomContainer = styled(Container)(({ theme }) => ({
+        display: "flex",
+        [theme.breakpoints.down("md")]: {
+            flexDirection: "column",
+            alignItems: "center",
+        }
+    }));
+    const CustomTitle = styled(MyTextTitle)(({ theme }) => ({
+        maxWidth: 801,
+        fontWeight: 400,
+        margin: "0 24px 60px 0",
+        [theme.breakpoints.down("md")]:{
+            margin: "0 0 30px 0",
+        }
+    }));
+    const CustomBox = styled(Box)(({ theme }) => ({
+        backgroundColor: 'white',
+        padding: "100px 0 ",
+        [theme.breakpoints.down("md")]:{
+            padding: "20px 0 ",
+        }
+    }));
     return(
-        <Box 
-            sx={{
-                backgroundColor: 'white',
-                padding: "100px 0 "
-            }}
-        >
-            <Container 
+        <CustomBox>
+            <CustomContainer 
                 maxWidth="lg"
                 sx={{
-                    display: "flex",
-                    flexDirection: "row"
+                    
                 }}
             >
-                <Box
-                    sx={{
-                        marginLeft: "24px"
-                    }}
-                >
+                <Box>
                     
                     <Box
                         sx={{
@@ -34,222 +86,67 @@ function Information() {
                             alignItems: "left",
                         }}
                     >
-                        <Typography
-                            sx={{
-                                fontWeight: 400,
-                                fontSize: 32,
-                                lineHeight: "130%",
-                                color: '#333333',
-                                margin: "0 24px 60px 0"
-                            }}
-                        >
+                        <CustomTitle>
                             Риэлторская компания “АРЕАЛ” — базируется в городе Якутск, Республики Саха (Якутия)
-                        </Typography>
-                        <Typography
-                            sx={{
-                                textAlign: "left",
-                                
-                                fontWeight: 400,
-                                fontSize: 18,
-                                lineHeight: "140%",
-                                color: "#333333",
-                                margin: "0 104px 100px 0"
-                            }}
-                        >
+                        </CustomTitle>
+                        <MyTypography>
                             АРЕАЛ — это все риэлторские услуги: купля, продажа, обмен, аренда жилой и коммерческой недвижимости Якутска, помощь в получении ипотеки. Защита интересов наших клиентов и юридическая чистота проводимых сделок делат нас одним из лучших.
-                        </Typography>
+                        </MyTypography>
                     </Box>
                     <Box
                         sx={{
                             display: "flex",
-                            flexDirection: "row",
+                            flexWrap: "wrap",
                             alignItems: "center",
-                            justifyContent: "space-between",
+                            justifyContent: "space-evenly",
                             alignSelf: "center",
-                            marginRight: "66px"
                         }}
                     >
-                        <Box
-                            sx={{
-                                display: "flex",
-                                alignSelf: "center",
-                                flexDirection: "column",
-                            }}
-                        >
+                        {data.map((item, index) => (
                             <Box
+                                key={index}
                                 sx={{
-                                    width: "60px",
-                                    height: "57px",
                                     display: "flex",
-                                    textAlign: "center",
                                     alignSelf: "center",
                                     flexDirection: "column",
-                                    marginBottom: "26px"
                                 }}
                             >
-                                <img src={Images.Information_i1} alt="Information_i1" />
+                                <Box
+                                    sx={{
+                                        width: "60px",
+                                        height: "57px",
+                                        display: "flex",
+                                        textAlign: "center",
+                                        alignSelf: "center",
+                                        flexDirection: "column",
+                                        marginBottom: "26px"
+                                    }}
+                                >
+                                    <img src={item.img} alt="Information" />
+                                </Box>
+                                <MyText
+                                    sx={{
+                                        width: "130px",
+                                        textAlign: "center",
+                                        mb: 2,
+                                    }}
+                                >
+                                    {item.text}
+                                </MyText>
                             </Box>
-                            <Typography 
-                            sx={{
-                                fontWeight: 500,
-                                fontSize: 16,
-                                lineHeight: "20px",
-                                color: '#000000',
-                                width: "91px",
-                                height: "40px",
-                                textAlign: "center",
-                            }}
-                            >
-                                Квартиры и комнаты
-                            </Typography>
-                        </Box>
-                        <Box
-                            sx={{
-                                display: "flex",
-                                alignSelf: "center",
-                                flexDirection: "column",
-                            }}
-                        >
-                            <Box
-                                sx={{
-                                    width: "60px",
-                                    height: "57px",
-                                    display: "flex",
-                                    textAlign: "center",
-                                    alignSelf: "center",
-                                    flexDirection: "column",
-                                    marginBottom: "26px"
-                                }}
-                            >
-                                <img src={Images.Information_i2} alt="Information_i2" />
-                            </Box>
-                            <Typography 
-                            sx={{
-                                fontWeight: 500,
-                                fontSize: 16,
-                                lineHeight: "20px",
-                                color: '#000000',
-                                width: "114px",
-                                height: "40px",
-                                textAlign: "center",
-                            }}
-                            >
-                                Новостройки
-                            </Typography>
-                        </Box>
-                        <Box
-                            sx={{
-                                display: "flex",
-                                alignSelf: "center",
-                                flexDirection: "column",
-                            }}
-                        >
-                            <Box
-                                sx={{
-                                    width: "60px",
-                                    height: "57px",
-                                    display: "flex",
-                                    textAlign: "center",
-                                    alignSelf: "center",
-                                    flexDirection: "column",
-                                    marginBottom: "26px"
-                                }}
-                            >
-                                <img src={Images.Information_i3} alt="Information_i3" />
-                            </Box>
-                            <Typography 
-                            sx={{
-                                fontWeight: 500,
-                                fontSize: 16,
-                                lineHeight: "20px",
-                                color: '#000000',
-                                width: "150px",
-                                height: "40px",
-                                textAlign: "center",
-                            }}
-                            >
-                                Аренда квартир и комнат
-                            </Typography>
-                        </Box>
-                        <Box
-                            sx={{
-                                display: "flex",
-                                alignSelf: "center",
-                                flexDirection: "column",
-                            }}
-                        >
-                            <Box
-                                sx={{
-                                    width: "60px",
-                                    height: "57px",
-                                    display: "flex",
-                                    textAlign: "center",
-                                    alignSelf: "center",
-                                    flexDirection: "column",
-                                    marginBottom: "26px"
-                                }}
-                            >
-                                <img src={Images.Information_i4} alt="Information_i4" />
-                            </Box>
-                            <Typography 
-                            sx={{
-                                fontWeight: 500,
-                                fontSize: 16,
-                                lineHeight: "20px",
-                                color: '#000000',
-                                width: "86px",
-                                textAlign: "center",
-                            }}
-                            >
-                                Коттеджи, участки
-                            </Typography>
-                        </Box>
-                        <Box
-                            sx={{
-                                display: "flex",
-                                alignSelf: "center",
-                                flexDirection: "column",
-                            }}
-                        >
-                            <Box
-                                sx={{
-                                    width: "60px",
-                                    height: "57px",
-                                    display: "flex",
-                                    textAlign: "center",
-                                    alignSelf: "center",
-                                    flexDirection: "column",
-                                    marginBottom: "26px"
-                                }}
-                            >
-                                <img src={Images.Information_i5} alt="Information_i5" />
-                            </Box>
-                            <Typography 
-                            sx={{
-                                fontWeight: 500,
-                                fontSize: 16,
-                                lineHeight: "20px",
-                                color: '#000000',
-                                width: "127px",
-                                height: "40px",
-                                textAlign: "center",
-                            }}
-                            >
-                                Коммерческая недвижимость
-                            </Typography>
-                        </Box>
+                        ))}
                     </Box>
                 </Box>
                 <Box
                     sx={{
-                        width: "335px",
-                        height: "510px",
+                        maxWidth: "335px",
+                        alignSelf: "center",
                     }}
                 >
-                    <img src={Images.information} alt="information" />
+                    <img src={Images.information} style={{ width: "100%" }} alt="information" />
                 </Box>
-            </Container>
-        </Box>
+            </CustomContainer>
+        </CustomBox>
     )
 }
 
